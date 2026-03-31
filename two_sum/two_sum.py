@@ -20,4 +20,5 @@ if __name__ == "__main__":
     assert two_sum([3, 3], 6) == [0, 1]
     assert two_sum([1, 2, 3, 4, 5], 9) == [3, 4]
     assert two_sum([-1, -2, -3, -4], -6) == [1, 3]
+#    assert two_sum([3, 3, 3, 7], 6) == [0, 1]
     print("All tests passed!")
