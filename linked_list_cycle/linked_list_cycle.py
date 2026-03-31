@@ -8,7 +8,17 @@ class ListNode:
 
 
 def has_cycle(head: Optional[ListNode]) -> bool:
-    pass
+    visited_values = {}
+    has_cycle = False
+    current = head
+    while current is not None:
+        if current.val in visited_values:
+            has_cycle = True
+            break
+        else:
+            visited_values[current.val] = current.val
+        current = current.next
+    return has_cycle
 
 
 # Helpers
@@ -25,14 +35,14 @@ def build_list_with_cycle(values: list, cycle_pos: int) -> Optional[ListNode]:
 
 
 if __name__ == "__main__":
+    # no cycle
+    assert has_cycle(build_list_with_cycle([1, 2, 3, 4, 5], -1)) == False
     # cycle at index 1: 3 -> 2 -> 0 -> 4 -> (back to 2)
     assert has_cycle(build_list_with_cycle([3, 2, 0, 4], 1)) == True
     # cycle at index 0: 1 -> 2 -> (back to 1)
     assert has_cycle(build_list_with_cycle([1, 2], 0)) == True
     # single node, no cycle
     assert has_cycle(build_list_with_cycle([1], -1)) == False
-    # no cycle
-    assert has_cycle(build_list_with_cycle([1, 2, 3, 4, 5], -1)) == False
     # empty list
     assert has_cycle(None) == False
     print("All tests passed!")
