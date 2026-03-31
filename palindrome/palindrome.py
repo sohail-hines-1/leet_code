@@ -9,6 +9,9 @@ def is_palindrome(s: str) -> bool:
     return True
 
 if __name__ == "__main__":
-    test_cases = ["Racecar", "hello", "A man a plan a canal Panama", "Level", "level"]
-    for word in test_cases:
-        print(f"{word!r} -> {is_palindrome(word)}")
+    assert is_palindrome("Racecar") == True
+    assert is_palindrome("hello") == False
+    assert is_palindrome("A man a plan a canal Panama") == False
+    assert is_palindrome("Level") == True
+    assert is_palindrome("level") == True
+    print("All tests passed!")
