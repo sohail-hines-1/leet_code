@@ -13,7 +13,6 @@
 
 from typing import Optional
 
-
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -21,8 +20,46 @@ class TreeNode:
         self.right = right
 
 
+def do_has_sum(root, target_sum, total):
+    if root is None:
+        return False
+
+    total += root.val
+    if total == target_sum and (root.left is None and root.right is None):
+        return True
+    if total > target_sum:
+        return False
+    return do_has_sum(root.left, target_sum, total) or do_has_sum(root.right, target_sum, total)
+
 def has_path_sum(root: Optional[TreeNode], target_sum: int) -> bool:
-    pass
+    total = 0
+    return do_has_sum(root, target_sum, total)
+
+def print_tree(root: Optional[TreeNode]) -> None:
+    """Print the binary tree visually to the console, level by level."""
+    if not root:
+        print("(empty tree)")
+        return
+    levels = []
+    queue = [root]
+    while queue:
+        level_vals = []
+        next_queue = []
+        for node in queue:
+            if node:
+                level_vals.append(str(node.val))
+                next_queue.append(node.left)
+                next_queue.append(node.right)
+            else:
+                level_vals.append("null")
+        if any(v != "null" for v in level_vals):
+            levels.append(level_vals)
+        queue = [n for n in next_queue if n is not None]
+    height = len(levels)
+    for i, level in enumerate(levels):
+        indent = " " * (2 ** (height - i - 1) - 1)
+        gap = " " * (2 ** (height - i) - 1)
+        print(indent + gap.join(level))
 
 
 def build_tree(values: list) -> Optional[TreeNode]:
@@ -41,8 +78,8 @@ def build_tree(values: list) -> Optional[TreeNode]:
             node.right = TreeNode(values[i])
             queue.append(node.right)
         i += 1
+    print_tree(root)
     return root
-
 
 if __name__ == "__main__":
     assert has_path_sum(build_tree([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, None, 1]), 22) == True
