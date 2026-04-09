@@ -19,7 +19,7 @@ from typing import List
 
 def max_profit(prices: List[int]) -> int:
     profit = 0
-    buy_price = 5000
+    buy_price = prices[0]
     for i in range(0, len(prices)):
         if prices[i] < buy_price:
             buy_price = prices[i]
