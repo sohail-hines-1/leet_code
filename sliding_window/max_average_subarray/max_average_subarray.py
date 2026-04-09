@@ -14,15 +14,19 @@
 
 from typing import List
 
-
 def find_max_average(nums: List[int], k: int) -> float:
-    pass
+    e = len(nums) - k
+    max_average = float('-inf')
+    for offset in range(0, e + 1):
+        max_average = max(max_average, sum(nums[offset:offset + k]) / k)
+
+    return max_average
 
 
 if __name__ == "__main__":
-    assert find_max_average([1, 12, -5, -6, 50, 3], 4) == 12.75
+    assert find_max_average([-1], 1) == -1.0
     assert find_max_average([5], 1) == 5.0
+    assert find_max_average([1, 12, -5, -6, 50, 3], 4) == 12.75
     assert find_max_average([0, 1, 1, 3, 3], 4) == 2.0
     assert find_max_average([4, 0, 4, 3, 3], 5) == 2.8
-    assert find_max_average([-1], 1) == -1.0
     print("All tests passed!")
