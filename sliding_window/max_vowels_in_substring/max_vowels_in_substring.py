@@ -15,10 +15,19 @@
 #   Input:  s = "leetcode", k = 3
 #   Output: 2
 
+vowels = {"a", "e", "i", "o", "u"}
+
+def vowel_counter(str):
+    return len([char for char in str if char in vowels])
 
 def max_vowels(s: str, k: int) -> int:
-    pass
+    max_vowels = 0
+    e = len(s) - k
+    for i in range(0, e + 1):
+        substr = s[i : i + k]
+        max_vowels = max(max_vowels, vowel_counter(substr))
 
+    return max_vowels
 
 if __name__ == "__main__":
     assert max_vowels("abciiidef", 3) == 3
