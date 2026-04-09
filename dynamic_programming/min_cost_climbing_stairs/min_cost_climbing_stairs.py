@@ -20,8 +20,8 @@ class Climber:
     def do_min_cost_climbing(cls, costs: List[int], position, step_size, cost):
         if position + step_size <= len(costs):
             key = position
-            if key not in cls.min_costs or cls.min_costs[key] > costs[key]:
-                 cls.min_costs[key] = costs[key]
+            if key not in cls.min_costs:
+                cls.min_costs[key] = costs[key]
             cost += cls.do_min_cost_climbing(costs, position + step_size, step_size, costs[position])
 
         return cost
@@ -29,13 +29,17 @@ class Climber:
     @classmethod
     def min_cost_climbing(cls, costs: List[int]) -> int:
         cls.min_costs = {}
-        cls.do_min_cost_climbing(costs, 1, 2, 0)
-        return sum(cls.min_costs.values())
+        min_cost = min(
+            cls.do_min_cost_climbing(costs, 0, 1, 0),
+            cls.do_min_cost_climbing(costs, 0, 2, 0),
+            cls.do_min_cost_climbing(costs, 1, 1, 0),
+            cls.do_min_cost_climbing(costs, 1, 2, 0))
+        return min_cost
 
 if __name__ == "__main__":
     climber = Climber()
 
-    assert climber.min_cost_climbing([5, 12, 17, 25, 32]) == 37
-    assert climber.min_cost_climbing([10, 15, 20]) == 15
+    assert climber.min_cost_climbing([5, 12, 17, 25, 32]) == 22
+    assert climber.min_cost_climbing([10, 15, 20]) == 10
 #    assert climber.min_cost_climbing([1, 100, 1, 1, 1, 100, 1, 1, 100, 1]) == 6
     print("All tests passed!")
