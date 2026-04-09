@@ -14,13 +14,20 @@
 #
 #   Input:  target = 11, nums = [1, 1, 1, 1, 1, 1, 1, 1]
 #   Output: 0
-
+import math
 from typing import List
 
 
 def min_sub_array_len(target: int, nums: List[int]) -> int:
-    pass
+    min_sub_array_size = 9999
+    for i in range(0, len(nums)):
+        for j in range(i + 1, len(nums) + 1):
+            this_sum = sum(nums[i:j])
+            if this_sum >= target:
+                if j - i - 1 < min_sub_array_size:
+                    min_sub_array_size = j - i
 
+    return min_sub_array_size if min_sub_array_size != 9999 else 0
 
 if __name__ == "__main__":
     assert min_sub_array_len(7, [2, 3, 1, 2, 4, 3]) == 2
