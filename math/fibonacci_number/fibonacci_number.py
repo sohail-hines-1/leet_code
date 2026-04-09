@@ -17,9 +17,9 @@ def fib(n: int) -> int:
     second = 1
 
     while n > 1:
-        temp = second
+        temp = second                   # always save second
         second = first + second
-        first = temp
+        first = temp                    # reassign first = temp
         n -= 1
 
     return second

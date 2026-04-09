@@ -17,11 +17,11 @@ def quick_sort(nums: List[int]) -> List[int]:
     if len(nums) <= 1:
         return nums
 
-    p = nums[-1]
-    left = [x for x in nums[:-1] if x < p]
-    right = [x for x in nums[:-1] if x >= p]
+    p = nums[len(nums) - 1]                                 # Choosing the last element as the pivot
+    left_array = [x for x in nums[:-1] if x < p]            # Elements less than the pivot, note that nums[:-1] excludes the pivot
+    right_array = [x for x in nums[:-1] if x >= p]          # Elements greater than or equal to the pivot, note that nums[:-1] excludes the pivot
 
-    return quick_sort(left) + [p] + quick_sort(right)
+    return quick_sort(left_array) + [p] + quick_sort(right_array)
 
 if __name__ == "__main__":
     assert quick_sort([3, 6, 8, 10, 1, 2, 4]) == [1, 2, 3, 4, 6, 8, 10]

@@ -30,8 +30,8 @@ def do_climb_stairs(param, target):
 
     return count
 
-def climbing_stairs(n: int) -> int:
-    return do_climb_stairs(0, n)
+def climbing_stairs(target: int) -> int:
+    return do_climb_stairs(0, target)
 
 if __name__ == "__main__":
     assert climbing_stairs(1) == 1

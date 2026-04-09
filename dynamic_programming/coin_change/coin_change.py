@@ -19,6 +19,7 @@ def coin_change(coins: List[int], amount: int) -> int:
 
 
 if __name__ == "__main__":
+    assert coin_change([4, 3, 1], 6) == 2   # 25 + 10 + 1
     assert coin_change([1, 5, 10, 25], 36) == 3   # 25 + 10 + 1
     assert coin_change([1, 5, 10, 25], 30) == 2   # 25 + 5
     assert coin_change([2], 3) == -1               # impossible

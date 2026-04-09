@@ -19,14 +19,16 @@ class ListNode:
 
 
 def reverse_list(head: Optional[ListNode]) -> Optional[ListNode]:
+
+    # important initial state
     current = head
     prev = None
 
     # key takeaway is that the right side var is always reassigned in the next line
-    # there must be 4 assignments in the loop
-    # prev must be set to None initially
-    
+
+    # important exit condition focuses on CURRENT which STARTS at HEAD
     while current is not None:
+        # Note: 4 total assignments
         saved_next = current.next
         current.next = prev
         prev = current
