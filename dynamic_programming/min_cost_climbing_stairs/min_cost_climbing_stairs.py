@@ -19,11 +19,13 @@ class Climber:
     @classmethod
     def do_min_cost_climbing(cls, costs: List[int], position, step_size, cost):
         if position + step_size <= len(costs):
-            key = position
+            key = (position, step_size)
             if key not in cls.min_costs:
-                cls.min_costs[key] = costs[key]
-            cost += cls.do_min_cost_climbing(costs, position + step_size, step_size, costs[position])
-
+                p_cost = cls.do_min_cost_climbing(costs, position + step_size, step_size, costs[position])
+                cls.min_costs[key] = p_cost
+                cost += p_cost
+            else:
+                cost += cls.min_costs[key]
         return cost
 
     @classmethod
