@@ -14,9 +14,7 @@
 #
 #   Input:  target = 11, nums = [1, 1, 1, 1, 1, 1, 1, 1]
 #   Output: 0
-import math
 from typing import List
-
 
 def min_sub_array_len(target: int, nums: List[int]) -> int:
     min_sub_array_size = 9999

@@ -17,11 +17,10 @@ from typing import List
 def find_max_average(nums: List[int], k: int) -> float:
     e = len(nums) - k
     max_average = float('-inf')
-    for offset in range(0, e + 1):
+    for offset in range(0, e + 1):  # Note: e + 1 because range is exclusive of the end value
         max_average = max(max_average, sum(nums[offset:offset + k]) / k)
 
     return max_average
-
 
 if __name__ == "__main__":
     assert find_max_average([-1], 1) == -1.0
