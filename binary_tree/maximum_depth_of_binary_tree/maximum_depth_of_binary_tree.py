@@ -20,10 +20,23 @@ class TreeNode:
         self.left = left
         self.right = right
 
+def do_max_depth(root, depth):
+    depth += 1
+    left_depth = 0
+    right_depth= 0
+
+    if root.left is not None:
+        left_depth = do_max_depth(root.left, depth)
+    if root.right is not None:
+        right_depth = do_max_depth(root.right, depth)
+    return max(left_depth, right_depth, depth)
+
 
 def max_depth(root: Optional[TreeNode]) -> int:
-    pass
-
+    if root is None:
+        return 0
+    else:
+        return do_max_depth(root, 0)
 
 def build_tree(values: list) -> Optional[TreeNode]:
     if not values or values[0] is None:
