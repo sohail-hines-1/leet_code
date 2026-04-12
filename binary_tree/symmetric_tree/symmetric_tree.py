@@ -19,10 +19,21 @@ class TreeNode:
         self.left = left
         self.right = right
 
+def is_mirror(left: TreeNode, right: TreeNode) -> bool:
+    if left is None and right is not None:
+        return False
+    if right is None and left is not None:
+        return False
+    if left is None and right is None:
+        return True
+    
+    return left.val == right.val and is_mirror(left.left, right.right) \
+        and is_mirror(left.right, right.left)
 
 def is_symmetric(root: Optional[TreeNode]) -> bool:
-    pass
-
+    if root is None:
+        return True
+    return is_mirror(root.left, root.right)
 
 def build_tree(values: list) -> Optional[TreeNode]:
     if not values or values[0] is None:
