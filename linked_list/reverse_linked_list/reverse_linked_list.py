@@ -34,6 +34,7 @@ def reverse_list(head: Optional[ListNode]) -> Optional[ListNode]:
         prev = current
         current = saved_next
 
+    # important: return prev, NOT current
     return prev
 
 # Helpers

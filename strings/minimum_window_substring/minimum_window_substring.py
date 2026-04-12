@@ -32,6 +32,7 @@ def min_window(s: str, t: str) -> str:
             if right - left + 1 < min_length:
                 min_length = right - left + 1
                 min_left, min_right = left, right
+
             # attempt to shrink left
             if s[left] in needs:
                 have[s[left]] -= 1
