@@ -58,16 +58,20 @@ def do_compare(root: Optional[TreeNode], node: Optional[TreeNode]) -> bool:
     if root.val != node.val:
         return False
 
-    left_result, right_result = True, True
-    if root.left is not None:
-        left_result = do_compare(root.left, node.left)
+    # left_result, right_result = True, True
+    # if root.left is not None:
 
-    if root.right is not None:
-        right_result = do_compare(root.right, node.right)
+    left_result = do_compare(root.left, node.left)
+
+    # if root.right is not None:
+
+    right_result = do_compare(root.right, node.right)
 
     return left_result and right_result
 
 def is_subtree(root: Optional[TreeNode], sub_root: Optional[TreeNode]) -> bool:
+    if sub_root is None:
+        return True
     sub_nodes = find_nodes(root, sub_root)
     if len(sub_nodes) == 0:
         return False
@@ -98,10 +102,6 @@ def build_tree(values: list) -> Optional[TreeNode]:
 
 
 if __name__ == "__main__":
-
-    # empty subRoot
-    # root7 = build_tree([1, 2, 3])
-    # assert is_subtree(root7, None) == True
 
     # single-node subRoot not in tree
     root_ = build_tree([1, 2, 3])
