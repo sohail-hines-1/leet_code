@@ -11,7 +11,7 @@ Blind 75 + supplementary problems, organised by category. Update ✅ when a prob
 | Sliding Window      |        4 |     4 |
 | Searching           |        2 |     2 |
 | Arrays              |        4 |    13 |
-| Binary Tree         |        6 |    18 |
+| Binary Tree         |        7 |    18 |
 | Strings             |        4 |    13 |
 | Linked List         |        2 |     7 |
 | Math                |        2 |     4 |
@@ -22,7 +22,7 @@ Blind 75 + supplementary problems, organised by category. Update ✅ when a prob
 | Intervals           |        0 |     4 |
 | Matrix              |        0 |     4 |
 | Tries               |        0 |     3 |
-| **Total**           |   **27** | **99** |
+| **Total**           |   **28** | **99** |
 
 ---
 
@@ -79,7 +79,7 @@ Blind 75 + supplementary problems, organised by category. Update ✅ when a prob
 | Kth Smallest Element in BST                     | 🟡          | 🔲      | #230  |
 | Lowest Common Ancestor of Binary Tree           | 🟡          | 🔲      | #236  |
 | Lowest Common Ancestor of BST                   | 🟡          | 🔲      | #235  |
-| Same Tree                                       | 🟢          | 🔲      | #100  |
+| Same Tree                                       | 🟢          | ✅      | #100  |
 | Serialize and Deserialize Binary Tree           | 🔴          | 🔲      | #297  |
 | Subtree of Another Tree                         | 🟢          | 🔲      | #572  |
 | Symmetric Tree                                  | 🟢          | 🔲      | #101  |
