@@ -21,8 +21,15 @@ class TreeNode:
 
 
 def invert_tree(root: Optional[TreeNode]) -> Optional[TreeNode]:
-    pass
+    if root is None:
+        return None
+    temp = root.left
+    root.left = root.right
+    root.right = temp
+    invert_tree(root.left)
+    invert_tree(root.right)
 
+    return root
 
 def build_tree(values: list) -> Optional[TreeNode]:
     if not values or values[0] is None:
