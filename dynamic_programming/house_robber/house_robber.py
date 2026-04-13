@@ -12,9 +12,18 @@
 
 from typing import List
 
+def do_rob(nums: List[int], position, total) -> int:
+    if position >= len(nums):
+        return total
+    else:
+        total += nums[position]
+        position += 1
+        do_rob(nums, position, total)
+
+    return total
 
 def rob(nums: List[int]) -> int:
-    pass
+    return max(do_rob(nums, 0, 0), do_rob(nums, 1, 0))
 
 
 if __name__ == "__main__":

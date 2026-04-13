@@ -15,22 +15,17 @@ from typing import List
 
 
 def can_finish(num_courses: int, prerequisites: List[List[int]]) -> bool:
-    deps = {}
-    can_finish = True
-    max_courses = 0
-    for i in range (len(prerequisites)):
-        dep = prerequisites[i]
-        if not dep[1] in deps:
-            deps[dep[0]] = dep[1]
-        else:
-            can_finish = False
-
-    return can_finish
+    
 
 if __name__ == "__main__":
-    assert can_finish(4, [[1, 0], [2, 1], [3, 2]]) == True
-    assert can_finish(3, [[0, 1], [1, 2], [2, 0]]) == False
-    assert can_finish(2, [[1, 0], [0, 1]]) == False
-    assert can_finish(2, [[1, 0]]) == True
-    assert can_finish(1, []) == True
+    assert can_finish(4, [[1, 0], [2, 1], [3, 2]]) == True       # simple chain, no cycle
+    assert can_finish(3, [[0, 1], [1, 2], [2, 0]]) == False       # 3-node cycle
+    assert can_finish(2, [[1, 0], [0, 1]]) == False               # 2-node cycle
+    assert can_finish(2, [[1, 0]]) == True                        # single prerequisite
+    assert can_finish(1, []) == True                              # single course, no prereqs
+    assert can_finish(5, []) == True                              # many courses, no prereqs
+    assert can_finish(6, [[1,0],[2,1],[3,2],[4,3],[5,4]]) == True  # long chain, no cycle
+    assert can_finish(4, [[1,0],[2,0],[3,1],[3,2]]) == True        # diamond shape, no cycle
+    assert can_finish(4, [[1,0],[2,1],[0,2],[3,0]]) == False       # cycle among first 3 nodes
+    assert can_finish(6, [[1,0],[2,1],[1,2],[4,3],[5,4]]) == False # cycle in one component, not the other
     print("All tests passed!")

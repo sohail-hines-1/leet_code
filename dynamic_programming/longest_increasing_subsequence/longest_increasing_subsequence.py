@@ -22,6 +22,8 @@ def do_longest_subsequence(nums: List[int], position: int, last: int) -> int:
     include = 0
     if current > last:
         last = current
+        
+        # NOTE: add one to result in order to extend length to current + 1
         include = do_longest_subsequence(nums, position + 1, last) + 1
 
     return max(skip, include)

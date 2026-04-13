@@ -26,7 +26,7 @@ def is_mirror(left: TreeNode, right: TreeNode) -> bool:
         return False
     if left is None and right is None:
         return True
-    
+
     return left.val == right.val and is_mirror(left.left, right.right) \
         and is_mirror(left.right, right.left)
 
