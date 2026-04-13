@@ -15,14 +15,14 @@ Blind 75 + supplementary problems, organised by category. Update ✅ when a prob
 | Strings             |        4 |    13 |
 | Linked List         |        2 |     7 |
 | Math                |        2 |     4 |
-| Dynamic Programming |        2 |    15 |
+| Dynamic Programming |        3 |    15 |
 | Graphs              |        1 |     7 |
 | Backtracking        |        0 |     4 |
 | Heap                |        0 |     1 |
 | Intervals           |        0 |     4 |
 | Matrix              |        0 |     4 |
 | Tries               |        0 |     3 |
-| **Total**           |   **30** | **99** |
+| **Total**           |   **31** | **99** |
 
 ---
 
@@ -120,7 +120,7 @@ Blind 75 + supplementary problems, organised by category. Update ✅ when a prob
 | House Robber II                | 🟡          | 🔲      | #213  |
 | Jump Game                      | 🟡          | 🔲      | #55   |
 | Longest Common Subsequence     | 🟡          | 🔲      | #1143 |
-| Longest Increasing Subsequence | 🟡          | 🔲      | #300  |
+| Longest Increasing Subsequence | 🟡          | ✅      | #300  |
 | Maximum Subarray               | 🟡          | 🔲      | #53   |
 | Minimum Cost for Tickets       | 🟡          | 🔲      | #983  |
 | Unique Paths                   | 🟡          | 🔲      | #62   |
