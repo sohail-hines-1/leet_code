@@ -12,7 +12,7 @@ Blind 75 + supplementary problems, organised by category. Update ✅ when a prob
 | Searching           |        2 |     2 |
 | Arrays              |        4 |    13 |
 | Binary Tree         |        9 |    18 |
-| Strings             |        4 |    13 |
+| Strings             |        5 |    13 |
 | Linked List         |        2 |     7 |
 | Math                |        2 |     4 |
 | Dynamic Programming |        3 |    15 |
@@ -22,7 +22,7 @@ Blind 75 + supplementary problems, organised by category. Update ✅ when a prob
 | Intervals           |        0 |     4 |
 | Matrix              |        0 |     4 |
 | Tries               |        0 |     3 |
-| **Total**           |   **31** | **99** |
+| **Total**           |   **32** | **99** |
 
 ---
 
@@ -55,7 +55,7 @@ Blind 75 + supplementary problems, organised by category. Update ✅ when a prob
 | Group Anagrams                                 | 🟡          | 🔲      | #49  |
 | Integer to Roman                               | 🟡          | 🔲      | #12  |
 | Longest Repeating Character Replacement        | 🟡          | 🔲      | #424 |
-| Longest Substring Without Repeating Characters | 🟡          | 🔲      | #3   |
+| Longest Substring Without Repeating Characters | 🟡          | ✅      | #3   |
 | Palindromic Substrings                         | 🟡          | 🔲      | #647 |
 | Roman to Integer                               | 🟢          | 🔲      | #13  |
 | String to Integer (atoi)                       | 🟡          | 🔲      | #8   |
