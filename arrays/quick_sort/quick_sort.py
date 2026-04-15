@@ -13,18 +13,53 @@
 
 from typing import List
 
+def do_quick_sort(nums):
+    if len(nums) < 2:
+        return nums
+
+    i = 0
+    right = len(nums) - 1
+    j = right
+    p = nums[right]
+    while i < j:
+        
+        # look for numbers greater than pivot
+        while nums[i] <= p and i < j:
+            i += 1
+
+        # look for numbers less than the pivot
+        if nums[i] > p:
+            while nums[j] >= p and i < j:
+                j -= 1
+
+        # now nums[i] is greater than pivot and nums[j] is less than the pivot
+        if nums[i] > nums[j]:
+            tmp = nums[i]
+            nums[i] = nums[j]
+            nums[j] = tmp
+
+    # now we need to swap the value at nums[i] with the pivot at nums[right]
+    if i + 1 < len (nums):
+        tmp = nums[i]
+        nums[i] = p
+        nums[right] = tmp
+
+    # Note: nums[0:i] excludes nums[i] which is the PIVOT
+    return do_quick_sort(nums[0:i]) + [nums[i]] + do_quick_sort(nums[i+1:])
+
 def quick_sort(nums: List[int]) -> List[int]:
     if len(nums) <= 1:
         return nums
 
-    p = nums[len(nums) - 1]                                 # Choosing the last element as the pivot
-    left_array = [x for x in nums[:-1] if x < p]            # Elements less than the pivot, note that nums[:-1] excludes the pivot
-    right_array = [x for x in nums[:-1] if x >= p]          # Elements greater than or equal to the pivot, note that nums[:-1] excludes the pivot
+    nums = do_quick_sort(nums)
+    print (nums)
 
-    return quick_sort(left_array) + [p] + quick_sort(right_array)
+    return nums
+
 
 if __name__ == "__main__":
-    assert quick_sort([3, 6, 8, 10, 1, 2, 4]) == [1, 2, 3, 4, 6, 8, 10]
+    assert quick_sort([5,4,9,0,6,7,1]) == [0, 1, 4, 5, 6, 7, 9]
+    assert quick_sort([7, 3, 9, 2, 8, 5, 3]) == [2, 3, 3, 5, 7, 8, 9]
     assert quick_sort([5, 4, 3, 2, 1]) == [1, 2, 3, 4, 5]
     assert quick_sort([1, 2, 3, 4, 5]) == [1, 2, 3, 4, 5]
     assert quick_sort([1]) == [1]
