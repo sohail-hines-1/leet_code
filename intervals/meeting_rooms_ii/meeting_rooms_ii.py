@@ -8,7 +8,6 @@
 #   Output: 2
 
 from typing import List
-import heapq
 
 
 def min_meeting_rooms(intervals: List[List[int]]) -> int:
@@ -18,7 +17,7 @@ def min_meeting_rooms(intervals: List[List[int]]) -> int:
     rooms = 0
     start_index = 0
     end_index = 0
-    for i in range(0, len(start_intervals)):
+    for _ in range(0, len(start_intervals)):
         if start_intervals[start_index] < end_intervals[end_index]:     # start less than end indicates an overlap (new room is needed)
             rooms += 1
             start_index += 1
