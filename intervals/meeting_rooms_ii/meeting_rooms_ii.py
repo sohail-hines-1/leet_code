@@ -19,10 +19,10 @@ def min_meeting_rooms(intervals: List[List[int]]) -> int:
     start_index = 0
     end_index = 0
     for i in range(0, len(start_intervals)):
-        if start_intervals[start_index] < end_intervals[end_index]:
+        if start_intervals[start_index] < end_intervals[end_index]:     # start less than end indicates an overlap (new room is needed)
             rooms += 1
             start_index += 1
-        else:
+        else:                                                           # start time is >= end indicates a gap (room has been released)
             rooms -= 1
             end_index += 1
         min_rooms = max(min_rooms, rooms)
