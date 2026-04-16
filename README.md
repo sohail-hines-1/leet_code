@@ -15,14 +15,14 @@ Blind 75 + supplementary problems, organised by category. Update ✅ when a prob
 | Strings             |        5 |    13 |
 | Linked List         |        2 |     7 |
 | Math                |        2 |     4 |
-| Dynamic Programming |        3 |    15 |
+| Dynamic Programming |        4 |    15 |
 | Graphs              |        1 |     7 |
-| Backtracking        |        0 |     4 |
+| Backtracking        |        1 |     4 |
 | Heap                |        0 |     1 |
-| Intervals           |        0 |     4 |
+| Intervals           |        2 |     4 |
 | Matrix              |        0 |     4 |
 | Tries               |        0 |     3 |
-| **Total**           |   **32** | **99** |
+| **Total**           |   **36** | **99** |
 
 ---
 
@@ -116,7 +116,7 @@ Blind 75 + supplementary problems, organised by category. Update ✅ when a prob
 | Combination Sum IV             | 🟡          | 🔲      | #377  |
 | Decode Ways                    | 🟡          | 🔲      | #91   |
 | Edit Distance                  | 🟡          | 🔲      | #72   |
-| House Robber                   | 🟡          | 🔲      | #198  |
+| House Robber                   | 🟡          | ✅      | #198  |
 | House Robber II                | 🟡          | 🔲      | #213  |
 | Jump Game                      | 🟡          | 🔲      | #55   |
 | Longest Common Subsequence     | 🟡          | 🔲      | #1143 |
@@ -159,7 +159,7 @@ Blind 75 + supplementary problems, organised by category. Update ✅ when a prob
 | Problem                             | Difficulty | Status | #   |
 |-------------------------------------|------------|--------|-----|
 | Combination Sum                     | 🟡          | 🔲      | #39 |
-| Letter Combinations of Phone Number | 🟡          | 🔲      | #17 |
+| Letter Combinations of Phone Number | 🟡          | ✅      | #17 |
 | Permutations                        | 🟡          | 🔲      | #46 |
 | Subsets                             | 🟡          | 🔲      | #78 |
 
@@ -174,8 +174,8 @@ Blind 75 + supplementary problems, organised by category. Update ✅ when a prob
 | Problem                   | Difficulty | Status | #    |
 |---------------------------|------------|--------|------|
 | Insert Interval           | 🟡          | 🔲      | #57  |
-| Meeting Rooms             | 🟢          | 🔲      | #252 |
-| Meeting Rooms II          | 🟡          | 🔲      | #253 |
+| Meeting Rooms             | 🟢          | ✅      | #252 |
+| Meeting Rooms II          | 🟡          | ✅      | #253 |
 | Non-Overlapping Intervals | 🟡          | 🔲      | #435 |
 
 ## Matrix
