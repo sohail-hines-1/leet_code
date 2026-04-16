@@ -10,21 +10,27 @@
 #   Input:  [2, 7, 9, 3, 1]
 #   Output: 12
 
+# TODO: Since do_rob(nums, position) always returns the same value for the same position, you can cache the result the first time it's computed and return the cached value
+#   on subsequent calls — avoiding redundant subtree traversals.
+#
+#   In Python the simplest way is @functools.lru_cache on the helper, or a plain dict passed through as a parameter. Without it the time complexity is O(2^n) — with it, it drops
+#    to O(n) since each position is computed exactly once.
+
 from typing import List
 
-def do_rob(nums: List[int], position, total) -> int:
-    if position >= len(nums):
-        return total
-    else:
-        total += nums[position]
-        position += 1
-        do_rob(nums, position, total)
+def do_rob(nums: List[int], position) -> int:
 
-    return total
+    if position < 0:     # Note: position 0 is valid and permitted
+        return 0
+
+    skip_total = do_rob(nums, position - 1)                         # skip robs adjacent house
+
+    include_total = nums[position]  + do_rob(nums, position - 2)    # Important: The current home value is added here !!
+
+    return max(skip_total, include_total)                           # returns the max of two totals
 
 def rob(nums: List[int]) -> int:
-    return max(do_rob(nums, 0, 0), do_rob(nums, 1, 0))
-
+    return do_rob(nums, len(nums) - 1)
 
 if __name__ == "__main__":
     assert rob([1, 2, 3, 1]) == 4
